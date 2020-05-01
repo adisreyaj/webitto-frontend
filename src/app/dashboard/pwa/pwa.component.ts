@@ -4,7 +4,7 @@
  * File Created: Friday, 1st May 2020 4:04:23 pm
  * Author: Adithya Sreyaj
  * -----
- * Last Modified: Friday, 1st May 2020 11:22:07 pm
+ * Last Modified: Saturday, 2nd May 2020 12:12:18 am
  * Modified By: Adithya Sreyaj<adi.sreyaj@gmail.com>
  * -----
  */
@@ -13,6 +13,7 @@ import { Component, OnInit } from '@angular/core';
 import { FileValidationHelper } from '../../core/helpers/file-validation.helper';
 import { FileUploadService } from '../../core/service/file-upload.service';
 import { HttpEvent, HttpEventType } from '@angular/common/http';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-pwa',
@@ -25,7 +26,18 @@ export class PwaComponent implements OnInit {
   fileName: string;
   isUploading = false;
   isFileUploaded = false;
-  constructor(private fileUploadService: FileUploadService) {}
+
+  sectionHeader = {
+    title: 'PWA Assets Generator',
+    subtitle: `Your PWA needs to have icons so that it can be shown as App icons, or title bar icons etc. 
+    There are different resolutions that needs to be present for it to work perfectly in all browsers.
+    Just choose a good resolution image of your logo and upload it. 
+    `,
+  };
+  constructor(
+    private fileUploadService: FileUploadService,
+    private router: Router,
+  ) {}
 
   ngOnInit(): void {}
 
@@ -52,26 +64,14 @@ export class PwaComponent implements OnInit {
             this.progress = Math.round((event.loaded / event.total) * 100);
             break;
           case HttpEventType.Response:
-            console.log('File uploaded successfully!', event.body);
+            if (event.status === 200) {
+              console.log('File uploaded successfully!', event.body);
+              this.isFileUploaded = true;
+            }
+            this.progress = 0;
             this.isUploading = false;
-            this.isFileUploaded = true;
+            this.router.navigate(['/pwa', 'download', 123]);
         }
       });
-  }
-
-  downloadAssets() {
-    this.fileUploadService.downloadFile('123').subscribe((data: any) => {
-      this.extractData(data);
-    });
-  }
-
-  private extractData(res: string) {
-    let myBlob: Blob = new Blob([res], {
-      type: 'application/zip',
-    });
-    const fileURL = URL.createObjectURL(myBlob);
-    const win = window.open(fileURL, '_blank');
-    win.opener = null;
-    win.focus();
   }
 }

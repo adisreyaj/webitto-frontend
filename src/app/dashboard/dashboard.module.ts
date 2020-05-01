@@ -4,7 +4,7 @@
  * File Created: Friday, 1st May 2020 2:24:14 pm
  * Author: Adithya Sreyaj
  * -----
- * Last Modified: Friday, 1st May 2020 3:45:13 pm
+ * Last Modified: Saturday, 2nd May 2020 12:25:18 am
  * Modified By: Adithya Sreyaj<adi.sreyaj@gmail.com>
  * -----
  */
@@ -16,9 +16,10 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { DashboardRoutingModule } from './dashboard-routing.module';
 import { DashboardComponent } from './dashboard.component';
 import { HeaderComponent } from '../components/header/header.component';
+import { FooterComponent } from '../components/footer/footer.component';
 
 @NgModule({
-  declarations: [DashboardComponent, HeaderComponent],
+  declarations: [DashboardComponent, HeaderComponent, FooterComponent],
   imports: [CommonModule, DashboardRoutingModule, FlexLayoutModule],
 })
 export class DashboardModule {}

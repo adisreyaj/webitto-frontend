@@ -1,10 +1,5 @@
 <div class="content breathing">
-  <app-section-header
-    [data]="{
-      title: 'PWA Assets Generator',
-      subtitle: 'It generates cool pwa assets'
-    }"
-  ></app-section-header>
+  <app-section-header [data]="sectionHeader"></app-section-header>
   <section
     class="file-upload"
     fxLayout="column"
@@ -30,7 +25,7 @@
       fxLayoutGap="24px"
     >
       <button webitto-stroked-button color="warn" (click)="reset()">
-        Go Back
+        Go Home
       </button>
       <button
         *ngIf="!isFileUploaded"
@@ -40,14 +35,6 @@
         (click)="generateAssets()"
       >
         Generate Assets
-      </button>
-      <button
-        *ngIf="isFileUploaded"
-        webitto-button
-        color="primary"
-        (click)="downloadAssets()"
-      >
-        Download Assets
       </button>
     </div>
   </section>
