@@ -4,7 +4,7 @@
  * File Created: Friday, 1st May 2020 4:04:23 pm
  * Author: Adithya Sreyaj
  * -----
- * Last Modified: Friday, 1st May 2020 5:05:44 pm
+ * Last Modified: Friday, 1st May 2020 7:06:24 pm
  * Modified By: Adithya Sreyaj<adi.sreyaj@gmail.com>
  * -----
  */
@@ -18,6 +18,7 @@ import { FileValidationHelper } from '../../core/helpers/file-validation.helper'
   styleUrls: ['./pwa.component.scss'],
 })
 export class PwaComponent implements OnInit {
+  progress = 0;
   constructor() {}
 
   ngOnInit(): void {}

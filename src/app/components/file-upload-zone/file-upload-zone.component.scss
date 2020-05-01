@@ -4,7 +4,7 @@
  * File Created: Friday, 1st May 2020 3:55:13 pm
  * Author: Adithya Sreyaj
  * -----
- * Last Modified: Friday, 1st May 2020 5:08:44 pm
+ * Last Modified: Friday, 1st May 2020 7:08:16 pm
  * Modified By: Adithya Sreyaj<adi.sreyaj@gmail.com>
  * -----
  */
@@ -12,11 +12,10 @@
 @import "partials/settings";
 
 .file-upload {
-  max-width: 600px;
-  width: 100%;
-  height: 280px;
+  width: 600px;
+  height: 250px;
   background: #f8f8f8;
-  border: 2px dashed #979797;
+  border: 2px dashed #97979750;
   border-radius: $border-radius;
 
   &__image {
@@ -31,10 +30,11 @@
   }
   span {
     color: $primary;
+    cursor: pointer;
   }
   &__hint {
     color: $text-light;
-    font-size: 0.8rem;
+    font-size: 0.7rem;
   }
 
   &.active {

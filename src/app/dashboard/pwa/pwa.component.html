@@ -1,3 +1,6 @@
-<app-file-upload-zone
-  (fileSelected)="fileSelected($event)"
-></app-file-upload-zone>
+<section class="file-upload" fxLayout="column" fxLayoutAlign="center center">
+  <app-file-upload-zone
+    (fileSelected)="fileSelected($event)"
+  ></app-file-upload-zone>
+  <app-file-upload-progress [progress]="progress"></app-file-upload-progress>
+</section>

@@ -1,0 +1,21 @@
+<div class="upload-progress" fxLayoutAlign="start center">
+  <div class="upload-progress__info">
+    <p class="title">Uploading...</p>
+    <div fxLayoutAlign="start center" fxLayoutGap="4px">
+      <p class="info">{{ fileName }}</p>
+      <span class="divider"></span>
+      <p class="info">{{ progress }}%</p>
+    </div>
+  </div>
+
+  <div
+    class="upload-progress__overlay"
+    [ngStyle]="{ width: progress + '%' }"
+    fxLayoutAlign="start center"
+  ></div>
+  <div class="progress-bar" [ngStyle]="{ width: progress + '%' }">
+    <div>
+      <span></span>
+    </div>
+  </div>
+</div>
