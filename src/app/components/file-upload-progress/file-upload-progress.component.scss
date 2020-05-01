@@ -4,21 +4,26 @@
  * File Created: Friday, 1st May 2020 6:00:30 pm
  * Author: Adithya Sreyaj
  * -----
- * Last Modified: Friday, 1st May 2020 6:51:44 pm
+ * Last Modified: Friday, 1st May 2020 10:17:52 pm
  * Modified By: Adithya Sreyaj<adi.sreyaj@gmail.com>
  * -----
  */
-@import "partials/colors";
-@import "partials/settings";
+@import 'partials/colors';
+@import 'partials/settings';
+@import 'partials/breakpoint';
+:host {
+  width: 100%;
+}
 p {
   margin: 0;
   padding: 0;
 }
 .upload-progress {
   width: 600px;
+  margin: 0 auto;
   height: 80px;
   background: #f8f8f8;
-  border: 1px solid #97979750;
+  border: 1px solid #97979730;
   border-radius: $border-radius;
   position: relative;
   &__info {
@@ -46,7 +51,7 @@ p {
     left: 0;
     height: 80%;
     display: flex;
-    justify-content: start;
+    justify-content: flex-start;
     align-items: flex-end;
     div {
       padding: 0 24px;
@@ -62,6 +67,13 @@ p {
       border-radius: 5px;
     }
   }
+
+  .progress-completed {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    right: 16px;
+  }
 }
 
 .title {
@@ -71,4 +83,10 @@ p {
 .info {
   font-size: 0.7rem;
   color: rgba($color: #000000, $alpha: 0.6);
+}
+
+@media screen and (max-width: $mobile) {
+  .upload-progress {
+    width: 100%;
+  }
 }

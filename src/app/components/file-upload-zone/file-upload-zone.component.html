@@ -17,7 +17,8 @@
     fxLayoutAlign="center center"
   >
     <h4 class="file-upload__title">
-      Drop your image here or <span (click)="fileInput.click()">Browse</span>
+      Drop your image here or
+      <span (click)="fileInput.click()">Browse</span> Image
     </h4>
 
     <input type="file" (change)="inputFileChange($event)" #fileInput hidden />

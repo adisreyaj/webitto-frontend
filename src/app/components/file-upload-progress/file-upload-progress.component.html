@@ -1,7 +1,7 @@
 <div class="upload-progress" fxLayoutAlign="start center">
   <div class="upload-progress__info">
-    <p class="title">Uploading...</p>
-    <div fxLayoutAlign="start center" fxLayoutGap="4px">
+    <p class="title">{{ progress === 100 ? 'Completed' : 'Uploading...' }}</p>
+    <div fxLayoutAlign="start center" fxLayoutGap="4px" *ngIf="fileName">
       <p class="info">{{ fileName }}</p>
       <span class="divider"></span>
       <p class="info">{{ progress }}%</p>
@@ -13,9 +13,23 @@
     [ngStyle]="{ width: progress + '%' }"
     fxLayoutAlign="start center"
   ></div>
-  <div class="progress-bar" [ngStyle]="{ width: progress + '%' }">
+  <div
+    *ngIf="progress !== 100"
+    class="progress-bar"
+    [ngStyle]="{ width: progress + '%' }"
+  >
     <div>
       <span></span>
     </div>
+  </div>
+
+  <div class="progress-completed" *ngIf="progress === 100">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24">
+      <path fill="none" d="M0 0h24v24H0z" />
+      <path
+        d="M12 22C6.477 22 2 17.523 2 12S6.477 2 12 2s10 4.477 10 10-4.477 10-10 10zm0-2a8 8 0 100-16 8 8 0 000 16zm-.997-4L6.76 11.757l1.414-1.414 2.829 2.829 5.656-5.657 1.415 1.414L11.003 16z"
+        fill="rgba(14,162,76,1)"
+      />
+    </svg>
   </div>
 </div>
