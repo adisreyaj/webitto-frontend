@@ -4,7 +4,7 @@
  * File Created: Friday, 1st May 2020 6:53:05 pm
  * Author: Adithya Sreyaj
  * -----
- * Last Modified: Friday, 1st May 2020 9:39:31 pm
+ * Last Modified: Friday, 1st May 2020 11:16:34 pm
  * Modified By: Adithya Sreyaj<adi.sreyaj@gmail.com>
  * -----
  */
@@ -30,6 +30,12 @@ export class FileUploadService {
     return this.http.post(`${this.baseUrl}/pwa-assets`, formData, {
       reportProgress: true,
       observe: 'events',
+    });
+  }
+
+  downloadFile(id: string) {
+    return this.http.get(`${this.baseUrl}/pwa-assets/${id}`, {
+      responseType: 'arraybuffer',
     });
   }
 }

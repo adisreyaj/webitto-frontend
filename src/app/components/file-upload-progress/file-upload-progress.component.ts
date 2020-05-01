@@ -4,7 +4,7 @@
  * File Created: Friday, 1st May 2020 6:00:30 pm
  * Author: Adithya Sreyaj
  * -----
- * Last Modified: Friday, 1st May 2020 7:07:41 pm
+ * Last Modified: Friday, 1st May 2020 9:59:40 pm
  * Modified By: Adithya Sreyaj<adi.sreyaj@gmail.com>
  * -----
  */
@@ -23,7 +23,7 @@ import {
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class FileUploadProgressComponent implements OnInit {
-  @Input() progress = 0;
+  @Input() progress = 80;
   @Input() fileName = 'N/A';
   constructor() {}
 

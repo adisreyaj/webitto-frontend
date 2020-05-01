@@ -4,7 +4,7 @@
  * File Created: Friday, 1st May 2020 7:54:02 pm
  * Author: Adithya Sreyaj
  * -----
- * Last Modified: Friday, 1st May 2020 9:24:12 pm
+ * Last Modified: Friday, 1st May 2020 10:31:14 pm
  * Modified By: Adithya Sreyaj<adi.sreyaj@gmail.com>
  * -----
  */
@@ -12,25 +12,46 @@
 @import 'partials/colors';
 @import 'partials/breakpoint';
 
-.webitto-button {
+@mixin webitto-button-base {
   padding: 14px 42px;
   border-radius: 8px;
   border: none;
   cursor: pointer;
+  border: 1px solid transparent;
+  background: none;
   font-weight: 500;
+}
 
+.webitto-button {
+  @include webitto-button-base;
   &.primary {
     background-color: $primary;
     color: #fff;
   }
-
   &:disabled {
     background-color: rgba($text-light, 0.4);
   }
 }
+.webitto-stroked-button {
+  @include webitto-button-base;
+  border-width: 1px;
+  border-style: solid;
+  &.primary {
+    border-color: $primary;
+    color: $primary;
+  }
+  &.warn {
+    border-color: rgba($text-light, 0.4);
+    color: $primary;
+  }
+  &:disabled {
+    color: rgba($text-light, 0.4);
+  }
+}
 
 @media screen and (max-width: $mobile) {
-  .webitto-button {
+  .webitto-button,
+  .webitto-stroked-button {
     padding: 16px 42px;
     font-size: 1.1rem;
   }

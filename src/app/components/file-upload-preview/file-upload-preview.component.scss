@@ -1,0 +1,23 @@
+/*
+ * File: file-upload-preview.component.scss
+ * Project: webitto-frontend
+ * File Created: Friday, 1st May 2020 10:40:35 pm
+ * Author: Adithya Sreyaj
+ * -----
+ * Last Modified: Friday, 1st May 2020 11:02:37 pm
+ * Modified By: Adithya Sreyaj<adi.sreyaj@gmail.com>
+ * -----
+ */
+
+.file-preview {
+  background: #f8f8f8;
+  border: 2px dashed #97979730;
+  box-sizing: border-box;
+  border-radius: 8px;
+  padding: 24px;
+  &__image {
+    max-height: 200px;
+    max-width: 200px;
+    object-fit: contain;
+  }
+}

@@ -4,13 +4,13 @@
  * File Created: Friday, 1st May 2020 6:00:30 pm
  * Author: Adithya Sreyaj
  * -----
- * Last Modified: Friday, 1st May 2020 9:22:22 pm
+ * Last Modified: Friday, 1st May 2020 10:17:52 pm
  * Modified By: Adithya Sreyaj<adi.sreyaj@gmail.com>
  * -----
  */
-@import "partials/colors";
-@import "partials/settings";
-@import "partials/breakpoint";
+@import 'partials/colors';
+@import 'partials/settings';
+@import 'partials/breakpoint';
 :host {
   width: 100%;
 }
@@ -66,6 +66,13 @@ p {
       width: 100%;
       border-radius: 5px;
     }
+  }
+
+  .progress-completed {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    right: 16px;
   }
 }
 
