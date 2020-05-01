@@ -4,7 +4,7 @@
  * File Created: Friday, 1st May 2020 4:04:23 pm
  * Author: Adithya Sreyaj
  * -----
- * Last Modified: Friday, 1st May 2020 6:15:23 pm
+ * Last Modified: Friday, 1st May 2020 7:50:55 pm
  * Modified By: Adithya Sreyaj<adi.sreyaj@gmail.com>
  * -----
  */
@@ -17,6 +17,7 @@ import { PwaRoutingModule } from './pwa-routing.module';
 import { PwaComponent } from './pwa.component';
 import { FileUploadZoneModule } from '../../components/file-upload-zone/file-upload-zone.module';
 import { FileUploadProgressModule } from '../../components/file-upload-progress/file-upload-progress.module';
+import { WebittoButtonModule } from '../../core/directives/webitto-button.module';
 
 @NgModule({
   declarations: [PwaComponent],
@@ -26,6 +27,7 @@ import { FileUploadProgressModule } from '../../components/file-upload-progress/
     FlexLayoutModule,
     FileUploadZoneModule,
     FileUploadProgressModule,
+    WebittoButtonModule,
   ],
 })
 export class PwaModule {}

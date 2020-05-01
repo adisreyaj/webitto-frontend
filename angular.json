@@ -26,7 +26,8 @@
             "assets": [
               "src/assets/favicons",
               "src/assets/images",
-              "src/assets/site.webmanifest"
+              "src/assets/site.webmanifest",
+              "src/_redirects"
             ],
             "styles": ["src/styles.scss"],
             "stylePreprocessorOptions": {
