@@ -1,0 +1,97 @@
+/*
+ * File: _theme.scss
+ * Project: webitto-frontend
+ * File Created: Friday, 1st May 2020 1:36:22 pm
+ * Author: Adithya Sreyaj
+ * -----
+ * Last Modified: Friday, 1st May 2020 2:01:43 pm
+ * Modified By: Adithya Sreyaj<adi.sreyaj@gmail.com>
+ * -----
+ */
+
+$webitto: (
+  50: #e7f0ff,
+  100: #c4dbfe,
+  200: #9cc3fe,
+  300: #74aafe,
+  400: #5798fd,
+  500: #3986fd,
+  600: #337efd,
+  700: #2c73fc,
+  800: #2469fc,
+  900: #1756fc,
+  A100: #ffffff,
+  A200: #f9faff,
+  A400: #c6d4ff,
+  A700: #adc1ff,
+  contrast: (
+    50: #000000,
+    100: #000000,
+    200: #000000,
+    300: #000000,
+    400: #000000,
+    500: #ffffff,
+    600: #ffffff,
+    700: #ffffff,
+    800: #ffffff,
+    900: #ffffff,
+    A100: #000000,
+    A200: #000000,
+    A400: #000000,
+    A700: #000000,
+  ),
+);
+
+$webitto-secondary: (
+  50: #e5f8fe,
+  100: #beeefc,
+  200: #93e2fb,
+  300: #68d6f9,
+  400: #47cef7,
+  500: #27c5f6,
+  600: #23bff5,
+  700: #1db8f3,
+  800: #17b0f2,
+  900: #0ea3ef,
+  A100: #ffffff,
+  A200: #e7f6ff,
+  A400: #b4e4ff,
+  A700: #9bdaff,
+  contrast: (
+    50: #000000,
+    100: #000000,
+    200: #000000,
+    300: #000000,
+    400: #000000,
+    500: #000000,
+    600: #000000,
+    700: #000000,
+    800: #000000,
+    900: #ffffff,
+    A100: #000000,
+    A200: #000000,
+    A400: #000000,
+    A700: #000000,
+  ),
+);
+
+@import "~@angular/material/theming";
+@include mat-core();
+
+$webitto-primary: mat-palette($webitto, 500);
+$webitto-accent: mat-palette($webitto-secondary, A200, A100, A400);
+
+// The warn palette is optional (defaults to red).
+$webitto-warn: mat-palette($mat-red);
+
+// Create the theme object (a Sass map containing all of the palettes).
+$webitto-theme: mat-light-theme(
+  $webitto-primary,
+  $webitto-accent,
+  $webitto-warn
+);
+
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+@include angular-material-theme($webitto-theme);
