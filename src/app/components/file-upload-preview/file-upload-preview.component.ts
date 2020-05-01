@@ -4,7 +4,7 @@
  * File Created: Friday, 1st May 2020 10:40:35 pm
  * Author: Adithya Sreyaj
  * -----
- * Last Modified: Friday, 1st May 2020 11:49:37 pm
+ * Last Modified: Saturday, 2nd May 2020 1:01:46 am
  * Modified By: Adithya Sreyaj<adi.sreyaj@gmail.com>
  * -----
  */
@@ -15,7 +15,8 @@ import {
   Input,
   ChangeDetectionStrategy,
 } from '@angular/core';
-import { DomSanitizer, SafeUrl } from '@angular/platform-browser';
+import { DomSanitizer } from '@angular/platform-browser';
+import { BehaviorSubject } from 'rxjs';
 
 @Component({
   selector: 'app-file-upload-preview',
@@ -29,7 +30,8 @@ export class FileUploadPreviewComponent implements OnInit {
     this.readFile(file);
   }
 
-  fileBase64: SafeUrl;
+  private imagePreviewSubject = new BehaviorSubject(null);
+  imagePreviewURI = this.imagePreviewSubject.asObservable();
   constructor(private sanitizerService: DomSanitizer) {}
 
   ngOnInit(): void {}
@@ -39,9 +41,10 @@ export class FileUploadPreviewComponent implements OnInit {
     fileReader.readAsDataURL(file);
 
     fileReader.onload = () => {
-      this.fileBase64 = this.sanitizerService.bypassSecurityTrustUrl(
+      const sanitizedURL = this.sanitizerService.bypassSecurityTrustUrl(
         fileReader.result as string,
       );
+      this.imagePreviewSubject.next(sanitizedURL);
     };
   }
 }
