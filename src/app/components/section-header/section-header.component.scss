@@ -4,12 +4,12 @@
  * File Created: Friday, 1st May 2020 9:02:29 pm
  * Author: Adithya Sreyaj
  * -----
- * Last Modified: Friday, 1st May 2020 9:15:56 pm
+ * Last Modified: Saturday, 2nd May 2020 12:08:30 am
  * Modified By: Adithya Sreyaj<adi.sreyaj@gmail.com>
  * -----
  */
 
-@import "partials/colors";
+@import 'partials/colors';
 
 .section-header {
   text-align: center;
@@ -19,5 +19,8 @@
   }
   &__subtitle {
     color: $text-light;
+    max-width: 600px;
+    margin: 0 auto;
+    font-size: 0.8rem;
   }
 }

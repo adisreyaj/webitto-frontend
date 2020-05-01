@@ -4,7 +4,7 @@
  * File Created: Friday, 1st May 2020 3:55:13 pm
  * Author: Adithya Sreyaj
  * -----
- * Last Modified: Friday, 1st May 2020 5:44:01 pm
+ * Last Modified: Friday, 1st May 2020 11:50:03 pm
  * Modified By: Adithya Sreyaj<adi.sreyaj@gmail.com>
  * -----
  */
@@ -16,12 +16,14 @@ import {
   EventEmitter,
   ViewChild,
   ElementRef,
+  ChangeDetectionStrategy,
 } from '@angular/core';
 
 @Component({
   selector: 'app-file-upload-zone',
   templateUrl: './file-upload-zone.component.html',
   styleUrls: ['./file-upload-zone.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class FileUploadZoneComponent implements OnInit {
   @Output() fileSelected = new EventEmitter<File>();

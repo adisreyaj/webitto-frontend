@@ -1,0 +1,38 @@
+/*
+ * File: footer.component.scss
+ * Project: webitto-frontend
+ * File Created: Saturday, 2nd May 2020 12:13:31 am
+ * Author: Adithya Sreyaj
+ * -----
+ * Last Modified: Saturday, 2nd May 2020 12:38:50 am
+ * Modified By: Adithya Sreyaj<adi.sreyaj@gmail.com>
+ * -----
+ */
+@import 'partials/layout';
+@import 'partials/colors';
+a {
+  text-decoration: none;
+}
+p {
+  margin: 0;
+}
+.footer {
+  padding: 24px 0;
+  width: 100%;
+  border-top: 1px solid #97979750;
+  &__container {
+    @include box-layout;
+  }
+  &__info {
+    p {
+      font-size: 0.8rem;
+      color: $text-light;
+    }
+  }
+  &__branding {
+    p {
+      font-weight: 700;
+      font-size: 1.2rem;
+    }
+  }
+}
