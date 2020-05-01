@@ -1,10 +1,20 @@
-<section class="file-upload" fxLayout="column" fxLayoutAlign="center center">
-  <app-file-upload-zone
-    (fileSelected)="fileSelected($event)"
-  ></app-file-upload-zone>
-  <app-file-upload-progress [progress]="progress"></app-file-upload-progress>
-</section>
-
-<section>
-  <button webitto-button color="primary">Generate Assets</button>
-</section>
+<div class="content breathing">
+  <app-section-header
+    [data]="{
+      title: 'PWA Assets Generator',
+      subtitle: 'It generates cool pwa assets'
+    }"
+  ></app-section-header>
+  <section
+    class="file-upload"
+    fxLayout="column"
+    fxLayoutAlign="center center"
+    fxLayoutGap="24px"
+  >
+    <app-file-upload-zone
+      (fileSelected)="fileSelected($event)"
+    ></app-file-upload-zone>
+    <app-file-upload-progress [progress]="progress"></app-file-upload-progress>
+    <button webitto-button color="primary" disabled>Generate Assets</button>
+  </section>
+</div>

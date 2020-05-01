@@ -1,0 +1,23 @@
+/*
+ * File: section-header.component.scss
+ * Project: webitto-frontend
+ * File Created: Friday, 1st May 2020 9:02:29 pm
+ * Author: Adithya Sreyaj
+ * -----
+ * Last Modified: Friday, 1st May 2020 9:15:56 pm
+ * Modified By: Adithya Sreyaj<adi.sreyaj@gmail.com>
+ * -----
+ */
+
+@import "partials/colors";
+
+.section-header {
+  text-align: center;
+  &__title {
+    margin-bottom: 4px;
+    font-weight: 700;
+  }
+  &__subtitle {
+    color: $text-light;
+  }
+}

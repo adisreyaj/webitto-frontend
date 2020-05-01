@@ -4,12 +4,14 @@
  * File Created: Friday, 1st May 2020 7:54:02 pm
  * Author: Adithya Sreyaj
  * -----
- * Last Modified: Friday, 1st May 2020 8:19:04 pm
+ * Last Modified: Friday, 1st May 2020 9:24:12 pm
  * Modified By: Adithya Sreyaj<adi.sreyaj@gmail.com>
  * -----
  */
 
-@import "partials/colors";
+@import 'partials/colors';
+@import 'partials/breakpoint';
+
 .webitto-button {
   padding: 14px 42px;
   border-radius: 8px;
@@ -20,5 +22,16 @@
   &.primary {
     background-color: $primary;
     color: #fff;
+  }
+
+  &:disabled {
+    background-color: rgba($text-light, 0.4);
+  }
+}
+
+@media screen and (max-width: $mobile) {
+  .webitto-button {
+    padding: 16px 42px;
+    font-size: 1.1rem;
   }
 }
