@@ -4,7 +4,7 @@
  * File Created: Friday, 1st May 2020 1:36:22 pm
  * Author: Adithya Sreyaj
  * -----
- * Last Modified: Friday, 1st May 2020 2:01:43 pm
+ * Last Modified: Friday, 1st May 2020 3:50:47 pm
  * Modified By: Adithya Sreyaj<adi.sreyaj@gmail.com>
  * -----
  */
@@ -95,3 +95,8 @@ $webitto-theme: mat-light-theme(
 // Alternatively, you can import and @include the theme mixins for each component
 // that you are using.
 @include angular-material-theme($webitto-theme);
+
+$webitto-typography: mat-typography-config(
+  $font-family: '"Inter", sans-serif',
+);
+@include mat-core($webitto-typography);
