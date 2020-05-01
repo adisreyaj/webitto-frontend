@@ -1,0 +1,24 @@
+/*
+ * File: _buttons.scss
+ * Project: webitto-frontend
+ * File Created: Friday, 1st May 2020 7:54:02 pm
+ * Author: Adithya Sreyaj
+ * -----
+ * Last Modified: Friday, 1st May 2020 8:19:04 pm
+ * Modified By: Adithya Sreyaj<adi.sreyaj@gmail.com>
+ * -----
+ */
+
+@import "partials/colors";
+.webitto-button {
+  padding: 14px 42px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  font-weight: 500;
+
+  &.primary {
+    background-color: $primary;
+    color: #fff;
+  }
+}

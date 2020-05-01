@@ -4,14 +4,20 @@
  * File Created: Friday, 1st May 2020 3:55:13 pm
  * Author: Adithya Sreyaj
  * -----
- * Last Modified: Friday, 1st May 2020 7:08:16 pm
+ * Last Modified: Friday, 1st May 2020 8:28:48 pm
  * Modified By: Adithya Sreyaj<adi.sreyaj@gmail.com>
  * -----
  */
 @import "partials/colors";
 @import "partials/settings";
+@import "partials/breakpoint";
+
+:host {
+  width: 100%;
+}
 
 .file-upload {
+  margin: 0 auto;
   width: 600px;
   height: 250px;
   background: #f8f8f8;
@@ -40,5 +46,11 @@
   &.active {
     border-color: $primary;
     background-color: rgba($primary, 0.1);
+  }
+}
+
+@media screen and (max-width: $mobile) {
+  .file-upload {
+    width: 100%;
   }
 }
