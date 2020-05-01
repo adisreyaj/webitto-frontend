@@ -1,0 +1,28 @@
+<div
+  class="file-upload"
+  fxLayoutAlign="center center"
+  fxLayout="column wrap"
+  fileUpload
+  (fileChange)="fileChanged($event)"
+>
+  <img
+    class="file-upload__image"
+    src="../../../assets/images/picture-file.svg"
+    alt="Upload logo"
+  />
+
+  <div
+    class="file-upload__info"
+    fxLayout="column"
+    fxLayoutAlign="center center"
+  >
+    <h4 class="file-upload__title">
+      Drop your image here or <span (click)="fileInput.click()">Browse</span>
+    </h4>
+
+    <input type="file" (change)="inputFileChange($event)" #fileInput hidden />
+    <p class="file-upload__hint">
+      Supports: JPG, PNG, SVG (Max 2 MB Size)
+    </p>
+  </div>
+</div>
