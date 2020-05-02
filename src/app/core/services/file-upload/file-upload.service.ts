@@ -4,14 +4,14 @@
  * File Created: Friday, 1st May 2020 6:53:05 pm
  * Author: Adithya Sreyaj
  * -----
- * Last Modified: Saturday, 2nd May 2020 1:40:23 pm
+ * Last Modified: Saturday, 2nd May 2020 4:33:26 pm
  * Modified By: Adithya Sreyaj<adi.sreyaj@gmail.com>
  * -----
  */
 
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { environment } from '../../../environments/environment';
+import { environment } from '../../../../environments/environment';
 import { FileUploadOptions } from './file-upload.interface';
 
 @Injectable({
