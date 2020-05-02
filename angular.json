@@ -25,6 +25,7 @@
             "aot": true,
             "assets": [
               "src/assets/favicons",
+              "src/assets/icons",
               "src/assets/images",
               "src/assets/site.webmanifest",
               "src/_redirects"
