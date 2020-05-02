@@ -4,14 +4,14 @@
  * File Created: Friday, 1st May 2020 6:53:05 pm
  * Author: Adithya Sreyaj
  * -----
- * Last Modified: Friday, 1st May 2020 11:16:34 pm
+ * Last Modified: Saturday, 2nd May 2020 4:33:26 pm
  * Modified By: Adithya Sreyaj<adi.sreyaj@gmail.com>
  * -----
  */
 
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { environment } from '../../../environments/environment';
+import { environment } from '../../../../environments/environment';
 import { FileUploadOptions } from './file-upload.interface';
 
 @Injectable({
@@ -34,7 +34,7 @@ export class FileUploadService {
   }
 
   downloadFile(id: string) {
-    return this.http.get(`${this.baseUrl}/pwa-assets/${id}`, {
+    return this.http.get(`${this.baseUrl}/pwa-assets/download/${id}`, {
       responseType: 'arraybuffer',
     });
   }

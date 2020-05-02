@@ -17,9 +17,10 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HomeModule } from './dashboard/home/home.module';
+import { SnackbarComponent } from './components/snackbar/snackbar.component';
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, SnackbarComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,

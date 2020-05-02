@@ -4,13 +4,13 @@
  * File Created: Friday, 1st May 2020 11:53:41 pm
  * Author: Adithya Sreyaj
  * -----
- * Last Modified: Saturday, 2nd May 2020 12:10:01 am
+ * Last Modified: Saturday, 2nd May 2020 4:33:26 pm
  * Modified By: Adithya Sreyaj<adi.sreyaj@gmail.com>
  * -----
  */
 
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
-import { FileUploadService } from '../../../core/service/file-upload.service';
+import { FileUploadService } from '../../../core/services/file-upload/file-upload.service';
 import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
