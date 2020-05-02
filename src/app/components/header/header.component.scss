@@ -1,0 +1,32 @@
+/*
+ * File: header.component.scss
+ * Project: webitto-frontend
+ * File Created: Friday, 1st May 2020 2:19:13 pm
+ * Author: Adithya Sreyaj
+ * -----
+ * Last Modified: Friday, 1st May 2020 9:16:43 pm
+ * Modified By: Adithya Sreyaj<adi.sreyaj@gmail.com>
+ * -----
+ */
+
+@import "partials/layout";
+.header {
+  height: 80px;
+  background-color: #fff;
+  box-shadow: 0 -12px 24px 0 rgba(0, 0, 0, 0.25);
+  &__container {
+    @include box-layout;
+  }
+  &__brand {
+  }
+}
+.brand {
+  &__logo {
+    height: 60px;
+  }
+  &__name {
+    margin: 0;
+    font-weight: 500;
+    font-size: 18px;
+  }
+}

@@ -1,0 +1,20 @@
+<div class="content breathing" fxLayout="column" fxLayoutAlign="center center">
+  <app-section-header [data]="sectionHeader"></app-section-header>
+
+  <section class="download__info">
+    <img src="../../../../assets/images/zip-file.svg" alt="Download File" />
+  </section>
+
+  <section
+    class="download__actions"
+    fxLayoutAlign="start center"
+    fxLayoutGap="24px"
+  >
+    <button webitto-stroked-button color="warn" (click)="goBack()">
+      Go Back
+    </button>
+    <button webitto-button color="primary" (click)="downloadAssets()">
+      Download Assets
+    </button>
+  </section>
+</div>

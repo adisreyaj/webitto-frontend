@@ -4,13 +4,17 @@
  * File Created: Friday, 1st May 2020 1:10:10 pm
  * Author: Adithya Sreyaj
  * -----
- * Last Modified: Friday, 1st May 2020 2:18:20 pm
+ * Last Modified: Saturday, 2nd May 2020 4:52:02 pm
  * Modified By: Adithya Sreyaj<adi.sreyaj@gmail.com>
  * -----
  */
 
-@import "partials/theme";
-@import "~normalize.css";
+@import '~normalize.css';
+@import 'partials/theme';
+@import 'partials/buttons';
+@import 'partials/layout';
+@import 'partials/scrollbar';
+@import 'partials/snackbar';
 
 html,
 body {
@@ -18,5 +22,5 @@ body {
 }
 body {
   margin: 0;
-  font-family: "Inter", sans-serif;
+  font-family: 'Inter', sans-serif;
 }

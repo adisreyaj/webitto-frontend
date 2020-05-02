@@ -1,0 +1,31 @@
+/*
+ * File: _layout.scss
+ * Project: webitto-frontend
+ * File Created: Friday, 1st May 2020 3:47:52 pm
+ * Author: Adithya Sreyaj
+ * -----
+ * Last Modified: Friday, 1st May 2020 9:19:30 pm
+ * Modified By: Adithya Sreyaj<adi.sreyaj@gmail.com>
+ * -----
+ */
+
+@import "partials/breakpoint";
+@mixin box-layout {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.content {
+  @include box-layout;
+  &.breathing {
+    margin-top: 60px;
+    margin-bottom: 60px;
+  }
+}
+
+@media screen and (max-width: $mobile) {
+  .content {
+    width: 92%;
+  }
+}
