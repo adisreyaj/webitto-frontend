@@ -1,0 +1,105 @@
+/*
+ * File: tools-menu.component.scss
+ * Project: webitto-frontend
+ * File Created: Sunday, 3rd May 2020 12:00:33 am
+ * Author: Adithya Sreyaj
+ * -----
+ * Last Modified: Sunday, 3rd May 2020 12:57:02 am
+ * Modified By: Adithya Sreyaj<adi.sreyaj@gmail.com>
+ * -----
+ */
+
+@import 'partials/colors';
+@import 'partials/layout';
+@import 'partials/breakpoint';
+
+@mixin menu-selected {
+  background-color: $primary;
+  transform: translateY(-5px);
+  p {
+    color: #fff;
+  }
+}
+
+p,
+h2 {
+  margin: 0;
+  padding: 0;
+}
+.tools-menu-container {
+  @include box-layout;
+  padding: 24px 32px 0px;
+  margin-top: 24px;
+  position: absolute;
+  left: 0;
+  right: 0;
+  border-radius: 8px;
+  background-color: #fff;
+  box-shadow: -3px 4px 30px -25px rgba($color: #000000, $alpha: 0.7);
+}
+.tools-menu {
+  &__header {
+    h2 {
+      font-weight: 700;
+    }
+    p {
+      color: lighten($color: #000000, $amount: 30);
+      font-size: 0.9rem;
+    }
+  }
+
+  &__list {
+    list-style: none;
+    padding: 12px 0;
+  }
+
+  &__item {
+    margin: 8px;
+    cursor: pointer;
+    outline: none;
+    &-container {
+      width: 140px;
+      padding: 16px;
+      background-color: #f2f2f2;
+      border-radius: 8px;
+      transition: all ease-in 0.3s;
+      &:hover {
+        @include menu-selected;
+      }
+    }
+
+    &.active {
+      .tools-menu__item-container {
+        @include menu-selected;
+      }
+    }
+  }
+  .menu-item {
+    &__icon {
+      border-radius: 50%;
+      background-color: #fff;
+      padding: 8px;
+      width: 50px;
+      height: 50px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 16px;
+    }
+    &__title {
+      text-align: center;
+      font-size: 0.8rem;
+      color: $text-light;
+    }
+  }
+}
+
+@media screen and (max-width: $mobile) {
+  .tools-menu-container {
+    padding: 16px;
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
+    background-color: #fff;
+  }
+}
