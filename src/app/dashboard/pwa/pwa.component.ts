@@ -4,7 +4,7 @@
  * File Created: Friday, 1st May 2020 4:04:23 pm
  * Author: Adithya Sreyaj
  * -----
- * Last Modified: Saturday, 2nd May 2020 4:49:42 pm
+ * Last Modified: Sunday, 3rd May 2020 12:36:30 pm
  * Modified By: Adithya Sreyaj<adi.sreyaj@gmail.com>
  * -----
  */
@@ -13,11 +13,13 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { HttpEvent, HttpEventType } from '@angular/common/http';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { nanoid } from 'nanoid';
 
-import { FileValidationHelper } from '../../core/helpers/file-validation.helper';
-import { FileUploadService } from '../../core/services/file-upload/file-upload.service';
-import { SnackbarComponent } from '../../components/snackbar/snackbar.component';
-import { snackbarOptions } from '../../core/config/snackbar.config';
+import { FileValidationHelper } from '@helpers/file-validation.helper';
+import { FileUploadService } from '@services/file-upload/file-upload.service';
+import { SnackbarComponent } from '@components/snackbar/snackbar.component';
+import { snackbarOptions } from '@config/snackbar.config';
+import { PWAAdvancesSettingsEvent } from './pwa-advanced-settings/pwa-advances-settings.interface';
 
 @Component({
   selector: 'app-pwa',
@@ -30,7 +32,8 @@ export class PwaComponent implements OnInit {
   fileName: string;
   isUploading = false;
   isFileUploaded = false;
-
+  advancedSettings: PWAAdvancesSettingsEvent = undefined;
+  isAdvancedSettingsApplied = false;
   sectionHeader = {
     title: 'PWA Assets Generator',
     subtitle: `Your PWA needs to have icons so that it can be shown as App icons, or title bar icons etc. 
@@ -38,11 +41,7 @@ export class PwaComponent implements OnInit {
     Just choose a good resolution image of your logo and upload it. 
     `,
   };
-  constructor(
-    private fileUploadService: FileUploadService,
-    private snackbar: MatSnackBar,
-    private router: Router,
-  ) {}
+  constructor(private fileUploadService: FileUploadService, private snackbar: MatSnackBar, private router: Router) {}
 
   ngOnInit(): void {}
 
@@ -59,6 +58,14 @@ export class PwaComponent implements OnInit {
     }
   }
 
+  updateSettings(settings: PWAAdvancesSettingsEvent) {
+    this.advancedSettings = settings;
+  }
+
+  toggleAdvancedSettings(event: boolean) {
+    this.isAdvancedSettingsApplied = event;
+  }
+
   reset() {
     this.file = null;
     this.fileName = null;
@@ -68,23 +75,31 @@ export class PwaComponent implements OnInit {
 
   generateAssets() {
     this.isUploading = true;
-    this.fileUploadService
-      .uploadFiles({ id: '123', file: this.file })
-      .subscribe((event: HttpEvent<any>) => {
-        switch (event.type) {
-          case HttpEventType.UploadProgress:
-            this.progress = Math.round((event.loaded / event.total) * 100);
-            break;
-          case HttpEventType.Response:
-            if (event.status === 200) {
-              console.log('File uploaded successfully!', event.body);
-              this.isFileUploaded = true;
-            }
-            this.progress = 0;
-            this.isUploading = false;
-            this.router.navigate(['/pwa', 'download', 123]);
-        }
+    const uploadOptions = {
+      id: nanoid(),
+      file: this.file,
+    };
+
+    if (this.isAdvancedSettingsApplied && this.advancedSettings)
+      Object.assign(uploadOptions, {
+        format: this.advancedSettings.format,
+        sizes: this.advancedSettings.sizes,
       });
+    this.fileUploadService.uploadFiles(uploadOptions).subscribe((event: HttpEvent<any>) => {
+      switch (event.type) {
+        case HttpEventType.UploadProgress:
+          this.progress = Math.round((event.loaded / event.total) * 100);
+          break;
+        case HttpEventType.Response:
+          if (event.status === 200) {
+            console.log('File uploaded successfully!', event.body);
+            this.isFileUploaded = true;
+          }
+          this.progress = 0;
+          this.isUploading = false;
+          this.router.navigate(['/pwa', 'download', uploadOptions.id]);
+      }
+    });
   }
 
   private showFileInvalidSnackbar() {
