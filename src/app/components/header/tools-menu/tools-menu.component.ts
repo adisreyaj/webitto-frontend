@@ -4,12 +4,12 @@
  * File Created: Sunday, 3rd May 2020 12:00:33 am
  * Author: Adithya Sreyaj
  * -----
- * Last Modified: Sunday, 3rd May 2020 12:44:27 am
+ * Last Modified: Sunday, 3rd May 2020 1:17:21 pm
  * Modified By: Adithya Sreyaj<adi.sreyaj@gmail.com>
  * -----
  */
 
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-tools-menu',
@@ -49,7 +49,13 @@ export class ToolsMenuComponent implements OnInit {
       icon: '../../../../assets/icons/optimizer.svg',
     },
   ];
+
+  @Output() menuClosed = new EventEmitter();
   constructor() {}
 
   ngOnInit(): void {}
+
+  closeMenu() {
+    this.menuClosed.emit();
+  }
 }

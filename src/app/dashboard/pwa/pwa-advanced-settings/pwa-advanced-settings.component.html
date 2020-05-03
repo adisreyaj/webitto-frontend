@@ -1,0 +1,42 @@
+<div class="pwa-settings"
+     fxLayout="column"
+     fxLayoutAlign="start center"
+     fxLayoutGap="32px">
+    <mat-checkbox color="primary"
+                  (click)="toggleSettings()">Toggle Advanced Settings</mat-checkbox>
+    <div *ngIf="showSettings$ | async"
+         class="settings"
+         fxLayout="row wrap"
+         fxLayoutAlign="center start"
+         fxLayoutGap="32px">
+        <div class="settings__format">
+            <p class="pwa-settings__title">
+                Select Format
+            </p>
+            <mat-radio-group aria-label="Select an option"
+                             fxLayout="column"
+                             fxLayoutGap="8px"
+                             color="primary"
+                             (change)="updateSettings()"
+                             [(ngModel)]="selectedFormat">
+                <mat-radio-button value="PNG">PNG</mat-radio-button>
+                <mat-radio-button value="JPG">JPG</mat-radio-button>
+            </mat-radio-group>
+        </div>
+        <div class="settings__sizes">
+            <p class="pwa-settings__title">
+                Select Sizes
+            </p>
+            <div class="settings__sizes-item"
+                 gdColumns="auto auto"
+                 fxLayoutGap="18px"
+                 fxLayoutGap.lt-sm="24px">
+                <mat-checkbox *ngFor="let item of availableSize;index as i"
+                              [value]="item"
+                              [(ngModel)]="selectedSizes[i]"
+                              (change)="updateSettings()"
+                              color="primary">{{item}}x{{item}}</mat-checkbox>
+            </div>
+        </div>
+    </div>
+</div>

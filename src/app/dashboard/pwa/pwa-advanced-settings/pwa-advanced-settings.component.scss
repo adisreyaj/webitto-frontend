@@ -1,0 +1,34 @@
+/*
+ * File: pwa-advanced-settings.component.scss
+ * Project: webitto-frontend
+ * File Created: Sunday, 3rd May 2020 11:19:24 am
+ * Author: Adithya Sreyaj
+ * -----
+ * Last Modified: Sunday, 3rd May 2020 12:56:22 pm
+ * Modified By: Adithya Sreyaj<adi.sreyaj@gmail.com>
+ * -----
+ */
+:host {
+  width: 100%;
+}
+
+@import 'partials/breakpoint';
+.pwa-settings {
+  margin: 0 auto;
+  max-width: 600px;
+  margin-bottom: 32px;
+  &__title {
+    font-weight: 700;
+  }
+}
+
+@media screen and (max-width: $mobile) {
+  .pwa-settings {
+    width: 100%;
+  }
+  .settings__sizes-item {
+    mat-checkbox {
+      padding: 8px 0;
+    }
+  }
+}

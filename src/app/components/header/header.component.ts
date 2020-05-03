@@ -4,7 +4,7 @@
  * File Created: Friday, 1st May 2020 2:19:13 pm
  * Author: Adithya Sreyaj
  * -----
- * Last Modified: Sunday, 3rd May 2020 12:50:11 am
+ * Last Modified: Sunday, 3rd May 2020 1:18:31 pm
  * Modified By: Adithya Sreyaj<adi.sreyaj@gmail.com>
  * -----
  */
@@ -30,5 +30,10 @@ export class HeaderComponent implements OnInit {
   toggleMenu() {
     this.isMenuOpen = !this.isMenuOpen;
     this.menuSubject.next(this.isMenuOpen);
+  }
+
+  closeMenu() {
+    this.isMenuOpen = false;
+    this.menuSubject.next(false);
   }
 }
