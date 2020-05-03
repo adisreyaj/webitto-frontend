@@ -4,7 +4,7 @@
  * File Created: Friday, 1st May 2020 4:04:23 pm
  * Author: Adithya Sreyaj
  * -----
- * Last Modified: Sunday, 3rd May 2020 1:07:43 pm
+ * Last Modified: Sunday, 3rd May 2020 1:23:45 pm
  * Modified By: Adithya Sreyaj<adi.sreyaj@gmail.com>
  * -----
  */
@@ -101,7 +101,7 @@ export class PwaComponent implements OnInit {
           this.isUploading = false;
           this.router.navigate(['/pwa', 'download', uploadOptions.id]);
 
-        default:
+        case 0:
           this.progress = 0;
           this.isUploading = false;
           this.showSnackbar({ message: 'Something went wrong..Please try again!', type: 'error' });
