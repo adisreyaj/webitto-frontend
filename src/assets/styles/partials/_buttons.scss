@@ -4,7 +4,7 @@
  * File Created: Friday, 1st May 2020 7:54:02 pm
  * Author: Adithya Sreyaj
  * -----
- * Last Modified: Saturday, 2nd May 2020 12:43:06 am
+ * Last Modified: Sunday, 3rd May 2020 9:58:33 pm
  * Modified By: Adithya Sreyaj<adi.sreyaj@gmail.com>
  * -----
  */
@@ -15,6 +15,7 @@
 @mixin webitto-button-base {
   padding: 14px 42px;
   border-radius: 8px;
+  min-width: 160px;
   border: none;
   cursor: pointer;
   border: 1px solid transparent;

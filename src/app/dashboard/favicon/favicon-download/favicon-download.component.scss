@@ -4,11 +4,12 @@
  * File Created: Friday, 1st May 2020 11:53:41 pm
  * Author: Adithya Sreyaj
  * -----
- * Last Modified: Sunday, 3rd May 2020 9:33:48 pm
+ * Last Modified: Sunday, 3rd May 2020 10:02:39 pm
  * Modified By: Adithya Sreyaj<adi.sreyaj@gmail.com>
  * -----
  */
 @import 'partials/colors';
+@import 'partials/breakpoint';
 .download {
   &__info {
     margin-top: 32px;
@@ -33,6 +34,17 @@
     p {
       color: $text-light;
       font-size: 0.8rem;
+    }
+  }
+}
+
+@media screen and (max-width: $mobile) {
+  .download {
+    &__actions {
+      width: 80%;
+      button {
+        width: 100%;
+      }
     }
   }
 }

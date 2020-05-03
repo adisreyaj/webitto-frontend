@@ -20,10 +20,13 @@
     <app-code [snippet]="code"></app-code>
   </section>
   <section class="download__actions"
+           fxLayout="row wrap"
+           fxLayout.lt-sm="column"
            fxLayoutAlign="start center"
            fxLayoutGap="24px">
     <button webitto-stroked-button
             color="warn"
+            fxFlexOrder.lt-sm="3"
             (click)="goBack()">
       Go Back
     </button>
