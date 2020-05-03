@@ -4,12 +4,13 @@
  * File Created: Friday, 1st May 2020 2:19:13 pm
  * Author: Adithya Sreyaj
  * -----
- * Last Modified: Friday, 1st May 2020 11:50:13 pm
+ * Last Modified: Sunday, 3rd May 2020 1:18:31 pm
  * Modified By: Adithya Sreyaj<adi.sreyaj@gmail.com>
  * -----
  */
 
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
+import { BehaviorSubject } from 'rxjs';
 
 @Component({
   selector: 'app-header',
@@ -18,7 +19,21 @@ import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class HeaderComponent implements OnInit {
+  isMenuOpen = false;
+  private menuSubject = new BehaviorSubject(this.isMenuOpen);
+  menuOpen$ = this.menuSubject.asObservable();
+
   constructor() {}
 
   ngOnInit(): void {}
+
+  toggleMenu() {
+    this.isMenuOpen = !this.isMenuOpen;
+    this.menuSubject.next(this.isMenuOpen);
+  }
+
+  closeMenu() {
+    this.isMenuOpen = false;
+    this.menuSubject.next(false);
+  }
 }

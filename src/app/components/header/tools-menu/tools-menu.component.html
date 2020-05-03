@@ -1,0 +1,29 @@
+<div class="tools-menu-container">
+  <header class="tools-menu__header">
+    <h2>Available Tools</h2>
+    <p>
+      These are the available set of tools Webitto currently offers. You can
+      navigate to their own page by selection any of the tool.
+    </p>
+  </header>
+  <nav class="tools-menu">
+    <ul class="tools-menu__list"
+        fxLayout="row wrap">
+      <li *ngFor="let menu of menuItems"
+          class="tools-menu__item"
+          [routerLink]="['/', menu.link]"
+          routerLinkActive="active"
+          (click)="closeMenu()">
+        <div class="tools-menu__item-container"
+             fxLayout="column"
+             fxLayoutAlign="center center">
+          <div class="menu-item__icon">
+            <img [src]="menu?.icon"
+                 [alt]="menu?.title" />
+          </div>
+          <p class="menu-item__title">{{ menu?.title }}</p>
+        </div>
+      </li>
+    </ul>
+  </nav>
+</div>

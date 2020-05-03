@@ -13,7 +13,11 @@
     "target": "es2015",
     "lib": ["es2018", "dom"],
     "paths": {
-      "@components/*": ["./src/app/components/*"]
+      "@components/*": ["./src/app/components/*"],
+      "@config/*": ["./src/app/core/config/*"],
+      "@services/*": ["./src/app/core/services/*"],
+      "@helpers/*": ["./src/app/core/helpers/*"],
+      "@directives/*": ["./src/app/core/directives/*"]
     }
   },
   "angularCompilerOptions": {

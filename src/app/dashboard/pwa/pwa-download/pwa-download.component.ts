@@ -4,14 +4,15 @@
  * File Created: Friday, 1st May 2020 11:53:41 pm
  * Author: Adithya Sreyaj
  * -----
- * Last Modified: Saturday, 2nd May 2020 4:33:26 pm
+ * Last Modified: Sunday, 3rd May 2020 11:31:44 am
  * Modified By: Adithya Sreyaj<adi.sreyaj@gmail.com>
  * -----
  */
 
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
-import { FileUploadService } from '../../../core/services/file-upload/file-upload.service';
 import { Router, ActivatedRoute } from '@angular/router';
+
+import { FileUploadService } from '@services/file-upload/file-upload.service';
 
 @Component({
   selector: 'app-pwa-download',
