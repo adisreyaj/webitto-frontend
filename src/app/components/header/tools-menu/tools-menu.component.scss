@@ -4,7 +4,7 @@
  * File Created: Sunday, 3rd May 2020 12:00:33 am
  * Author: Adithya Sreyaj
  * -----
- * Last Modified: Sunday, 3rd May 2020 12:57:02 am
+ * Last Modified: Sunday, 3rd May 2020 1:14:52 pm
  * Modified By: Adithya Sreyaj<adi.sreyaj@gmail.com>
  * -----
  */
@@ -27,6 +27,7 @@ h2 {
   padding: 0;
 }
 .tools-menu-container {
+  z-index: 999;
   @include box-layout;
   padding: 24px 32px 0px;
   margin-top: 24px;
@@ -97,6 +98,7 @@ h2 {
 @media screen and (max-width: $mobile) {
   .tools-menu-container {
     padding: 16px;
+    height: calc(100vh - 120px);
     border: none;
     border-radius: 0;
     box-shadow: none;
