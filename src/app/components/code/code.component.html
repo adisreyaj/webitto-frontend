@@ -1,0 +1,4 @@
+<div class="code-viewer"
+     *ngIf="snippet$ | async as snippet">
+    <pre><code class="language-html" [innerHTML]="getCodeFormatted(snippet)"></code></pre>
+</div>

@@ -4,7 +4,7 @@
  * File Created: Friday, 1st May 2020 11:53:41 pm
  * Author: Adithya Sreyaj
  * -----
- * Last Modified: Sunday, 3rd May 2020 11:31:44 am
+ * Last Modified: Sunday, 3rd May 2020 8:47:36 pm
  * Modified By: Adithya Sreyaj<adi.sreyaj@gmail.com>
  * -----
  */
@@ -48,7 +48,7 @@ export class PwaDownloadComponent implements OnInit {
   }
 
   goBack() {
-    this.router.navigate(['/pwa']);
+    this.router.navigate(['/pwa-assets-generator']);
   }
 
   private extractData(res: string) {

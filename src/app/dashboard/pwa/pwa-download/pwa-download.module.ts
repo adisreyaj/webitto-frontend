@@ -4,7 +4,7 @@
  * File Created: Friday, 1st May 2020 11:53:41 pm
  * Author: Adithya Sreyaj
  * -----
- * Last Modified: Saturday, 2nd May 2020 12:03:29 am
+ * Last Modified: Sunday, 3rd May 2020 8:48:06 pm
  * Modified By: Adithya Sreyaj<adi.sreyaj@gmail.com>
  * -----
  */
@@ -20,12 +20,6 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 
 @NgModule({
   declarations: [PwaDownloadComponent],
-  imports: [
-    CommonModule,
-    PwaDownloadRoutingModule,
-    FlexLayoutModule,
-    WebittoButtonModule,
-    SectionHeaderModule,
-  ],
+  imports: [CommonModule, PwaDownloadRoutingModule, FlexLayoutModule, WebittoButtonModule, SectionHeaderModule],
 })
 export class PwaDownloadModule {}

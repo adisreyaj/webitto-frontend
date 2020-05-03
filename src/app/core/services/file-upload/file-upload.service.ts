@@ -4,7 +4,7 @@
  * File Created: Friday, 1st May 2020 6:53:05 pm
  * Author: Adithya Sreyaj
  * -----
- * Last Modified: Sunday, 3rd May 2020 1:03:50 pm
+ * Last Modified: Sunday, 3rd May 2020 8:19:50 pm
  * Modified By: Adithya Sreyaj<adi.sreyaj@gmail.com>
  * -----
  */
@@ -29,12 +29,10 @@ export class FileUploadService {
     formData.append('id', id);
     if (format) formData.append('format', format);
     if (sizes) formData.append('sizes', `${sizes}`);
-    return this.http
-      .post(`${this.baseUrl}/pwa-assets`, formData, {
-        reportProgress: true,
-        observe: 'events',
-      })
-      .pipe(catchError(this.handleError));
+    return this.http.post(`${this.baseUrl}/pwa-assets`, formData, {
+      reportProgress: true,
+      observe: 'events',
+    });
   }
 
   downloadFile(id: string) {

@@ -1,0 +1,38 @@
+/*
+ * File: favicon-download.component.scss
+ * Project: webitto-frontend
+ * File Created: Friday, 1st May 2020 11:53:41 pm
+ * Author: Adithya Sreyaj
+ * -----
+ * Last Modified: Sunday, 3rd May 2020 9:33:48 pm
+ * Modified By: Adithya Sreyaj<adi.sreyaj@gmail.com>
+ * -----
+ */
+@import 'partials/colors';
+.download {
+  &__info {
+    margin-top: 32px;
+  }
+  &__actions {
+    margin-top: 32px;
+  }
+}
+
+.code-snippet {
+  margin-top: 32px;
+  width: 100%;
+  &__header {
+    margin: 0 auto;
+    max-width: 600px;
+    text-align: center;
+    h2 {
+      font-weight: 700;
+      margin-bottom: 0;
+      margin-bottom: 4px;
+    }
+    p {
+      color: $text-light;
+      font-size: 0.8rem;
+    }
+  }
+}

@@ -4,7 +4,7 @@
  * File Created: Friday, 1st May 2020 2:24:14 pm
  * Author: Adithya Sreyaj
  * -----
- * Last Modified: Friday, 1st May 2020 4:07:02 pm
+ * Last Modified: Sunday, 3rd May 2020 8:00:15 pm
  * Modified By: Adithya Sreyaj<adi.sreyaj@gmail.com>
  * -----
  */
@@ -22,12 +22,15 @@ const routes: Routes = [
       {
         path: '',
         pathMatch: 'full',
-        loadChildren: () =>
-          import('./home/home.module').then((m) => m.HomeModule),
+        loadChildren: () => import('./home/home.module').then((m) => m.HomeModule),
       },
       {
-        path: 'pwa',
+        path: 'pwa-assets-generator',
         loadChildren: () => import('./pwa/pwa.module').then((m) => m.PwaModule),
+      },
+      {
+        path: 'favicon-generator',
+        loadChildren: () => import('./favicon/favicon.module').then((m) => m.FaviconModule),
       },
     ],
   },

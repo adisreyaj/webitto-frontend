@@ -1,0 +1,24 @@
+/*
+ * File: code.component.scss
+ * Project: webitto-frontend
+ * File Created: Sunday, 3rd May 2020 8:37:46 pm
+ * Author: Adithya Sreyaj
+ * -----
+ * Last Modified: Sunday, 3rd May 2020 9:13:17 pm
+ * Modified By: Adithya Sreyaj<adi.sreyaj@gmail.com>
+ * -----
+ */
+:host {
+  width: 100%;
+}
+@import 'partials/breakpoint';
+.code-viewer {
+  width: 650px;
+  margin: 0 auto;
+}
+
+@media screen and (max-width: $mobile) {
+  .code-viewer {
+    width: 100%;
+  }
+}

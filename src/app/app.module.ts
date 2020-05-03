@@ -4,7 +4,7 @@
  * File Created: Friday, 1st May 2020 1:10:10 pm
  * Author: Adithya Sreyaj
  * -----
- * Last Modified: Sunday, 3rd May 2020 12:01:03 am
+ * Last Modified: Sunday, 3rd May 2020 8:42:41 pm
  * Modified By: Adithya Sreyaj<adi.sreyaj@gmail.com>
  * -----
  */
@@ -21,13 +21,7 @@ import { SnackbarComponent } from './components/snackbar/snackbar.component';
 
 @NgModule({
   declarations: [AppComponent, SnackbarComponent],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    BrowserAnimationsModule,
-    HttpClientModule,
-    HomeModule,
-  ],
+  imports: [BrowserModule, AppRoutingModule, BrowserAnimationsModule, HttpClientModule, HomeModule],
   providers: [],
   bootstrap: [AppComponent],
 })

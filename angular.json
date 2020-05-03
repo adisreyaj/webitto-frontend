@@ -30,12 +30,9 @@
               "src/assets/site.webmanifest",
               "src/_redirects"
             ],
-            "styles": ["src/styles.scss"],
+            "styles": ["src/styles.scss", "src/assets/styles/code-highlight.scss"],
             "stylePreprocessorOptions": {
-              "includePaths": [
-                "src/assets/styles",
-                "src/assets/styles/partials"
-              ]
+              "includePaths": ["src/assets/styles", "src/assets/styles/partials"]
             },
             "scripts": []
           },
@@ -102,11 +99,7 @@
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
-            "tsConfig": [
-              "tsconfig.app.json",
-              "tsconfig.spec.json",
-              "e2e/tsconfig.json"
-            ],
+            "tsConfig": ["tsconfig.app.json", "tsconfig.spec.json", "e2e/tsconfig.json"],
             "exclude": ["**/node_modules/**"]
           }
         },

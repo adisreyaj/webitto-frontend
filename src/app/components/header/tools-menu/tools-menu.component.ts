@@ -4,7 +4,7 @@
  * File Created: Sunday, 3rd May 2020 12:00:33 am
  * Author: Adithya Sreyaj
  * -----
- * Last Modified: Sunday, 3rd May 2020 1:17:21 pm
+ * Last Modified: Sunday, 3rd May 2020 8:00:00 pm
  * Modified By: Adithya Sreyaj<adi.sreyaj@gmail.com>
  * -----
  */
@@ -19,12 +19,12 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 export class ToolsMenuComponent implements OnInit {
   menuItems = [
     {
-      link: 'pwa',
+      link: 'pwa-assets-generator',
       title: 'PWA Assets Generator',
       icon: '../../../../assets/icons/pwa.svg',
     },
     {
-      link: 'favicon',
+      link: 'favicon-generator',
       title: 'Favicon Generator',
       icon: '../../../../assets/icons/favicon.svg',
     },
