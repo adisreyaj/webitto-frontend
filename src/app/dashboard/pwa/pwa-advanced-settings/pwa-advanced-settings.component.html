@@ -29,7 +29,8 @@
             </p>
             <div class="settings__sizes-item"
                  gdColumns="auto auto"
-                 fxLayoutGap="18px">
+                 fxLayoutGap="18px"
+                 fxLayoutGap.lt-sm="24px">
                 <mat-checkbox *ngFor="let item of availableSize;index as i"
                               [value]="item"
                               [(ngModel)]="selectedSizes[i]"

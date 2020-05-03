@@ -4,7 +4,7 @@
  * File Created: Friday, 1st May 2020 4:04:23 pm
  * Author: Adithya Sreyaj
  * -----
- * Last Modified: Sunday, 3rd May 2020 12:36:30 pm
+ * Last Modified: Sunday, 3rd May 2020 1:07:43 pm
  * Modified By: Adithya Sreyaj<adi.sreyaj@gmail.com>
  * -----
  */
@@ -51,7 +51,7 @@ export class PwaComponent implements OnInit {
       this.file = file;
       this.fileName = file.name;
     } else {
-      this.showFileInvalidSnackbar();
+      this.showSnackbar({ message: 'Please select a valid file', type: 'error' });
       console.error('😞 Please Select a valid Image file');
       this.file = null;
       this.fileName = null;
@@ -86,6 +86,8 @@ export class PwaComponent implements OnInit {
         sizes: this.advancedSettings.sizes,
       });
     this.fileUploadService.uploadFiles(uploadOptions).subscribe((event: HttpEvent<any>) => {
+      console.log({ event });
+
       switch (event.type) {
         case HttpEventType.UploadProgress:
           this.progress = Math.round((event.loaded / event.total) * 100);
@@ -98,15 +100,20 @@ export class PwaComponent implements OnInit {
           this.progress = 0;
           this.isUploading = false;
           this.router.navigate(['/pwa', 'download', uploadOptions.id]);
+
+        default:
+          this.progress = 0;
+          this.isUploading = false;
+          this.showSnackbar({ message: 'Something went wrong..Please try again!', type: 'error' });
       }
     });
   }
 
-  private showFileInvalidSnackbar() {
+  private showSnackbar({ message, type }: { message: string; type: 'error' | 'success' }) {
     const snackbarOptionsWithData = Object.assign(snackbarOptions, {
       data: {
-        type: 'error',
-        message: 'Please select a valid image file',
+        type,
+        message,
       },
     });
     this.snackbar.openFromComponent(SnackbarComponent, snackbarOptionsWithData);
