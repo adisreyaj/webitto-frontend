@@ -1,39 +1,34 @@
 <div class="content breathing">
   <app-section-header [data]="sectionHeader"></app-section-header>
-  <section
-    class="file-upload"
-    fxLayout="column"
-    fxLayoutAlign="center center"
-    fxLayoutGap="24px"
-  >
-    <app-file-upload-zone
-      *ngIf="!file"
-      (fileSelected)="fileSelected($event)"
-    ></app-file-upload-zone>
-    <app-file-upload-preview
-      [file]="file"
-      *ngIf="file"
-    ></app-file-upload-preview>
-    <app-file-upload-progress
-      *ngIf="isUploading"
-      [progress]="progress"
-      [fileName]="fileName"
-    ></app-file-upload-progress>
-    <div
-      class="file-upload__actions"
-      fxLayoutAlign="start center"
-      fxLayoutGap="24px"
-    >
-      <button webitto-stroked-button color="warn" (click)="reset()">
+  <section class="file-upload"
+           fxLayout="column"
+           fxLayoutAlign="center center"
+           fxLayoutGap="24px">
+    <app-file-upload-zone *ngIf="!file"
+                          (fileSelected)="fileSelected($event)"></app-file-upload-zone>
+    <app-file-upload-preview [file]="file"
+                             *ngIf="file"></app-file-upload-preview>
+    <app-file-upload-progress *ngIf="isUploading"
+                              [progress]="progress"
+                              [fileName]="fileName"></app-file-upload-progress>
+
+    <div class="file-upload__advances-settings">
+      <app-pwa-advanced-settings (settingsChanged)="updateSettings($event)"
+                                 (settingsApplied)="toggleAdvancedSettings($event)"></app-pwa-advanced-settings>
+    </div>
+    <div class="file-upload__actions"
+         fxLayoutAlign="start center"
+         fxLayoutGap="24px">
+      <button webitto-stroked-button
+              color="warn"
+              (click)="reset()">
         Go Home
       </button>
-      <button
-        *ngIf="!isFileUploaded"
-        webitto-button
-        color="primary"
-        [disabled]="!file"
-        (click)="generateAssets()"
-      >
+      <button *ngIf="!isFileUploaded"
+              webitto-button
+              color="primary"
+              [disabled]="!file"
+              (click)="generateAssets()">
         Generate Assets
       </button>
     </div>
