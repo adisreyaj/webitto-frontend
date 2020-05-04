@@ -1,50 +1,59 @@
 {
-  "name": "Webitto - Web Companion",
+  "name": "Webitto - A bunch of tools to help you redefine the web.",
   "short_name": "webitto",
+  "theme_color": "#3986fd",
+  "background_color": "#fafafa",
+  "display": "standalone",
+  "scope": "./",
+  "start_url": "./",
   "icons": [
     {
-      "src": "./favicons/icon-72x72.png",
+      "src": "assets/favicons/icon-72x72.png",
       "sizes": "72x72",
-      "type": "image/png"
+      "type": "image/png",
+      "purpose": "maskable any"
     },
     {
-      "src": "./favicons/icon-96x96.png",
+      "src": "assets/favicons/icon-96x96.png",
       "sizes": "96x96",
-      "type": "image/png"
+      "type": "image/png",
+      "purpose": "maskable any"
     },
     {
-      "src": "./favicons/icon-128x128.png",
+      "src": "assets/favicons/icon-128x128.png",
       "sizes": "128x128",
-      "type": "image/png"
+      "type": "image/png",
+      "purpose": "maskable any"
     },
     {
-      "src": "./favicons/icon-144x144.png",
+      "src": "assets/favicons/icon-144x144.png",
       "sizes": "144x144",
-      "type": "image/png"
+      "type": "image/png",
+      "purpose": "maskable any"
     },
     {
-      "src": "./favicons/icon-152x152.png",
+      "src": "assets/favicons/icon-152x152.png",
       "sizes": "152x152",
-      "type": "image/png"
+      "type": "image/png",
+      "purpose": "maskable any"
     },
     {
-      "src": "./favicons/icon-192x192.png",
+      "src": "assets/favicons/icon-192x192.png",
       "sizes": "192x192",
-      "type": "image/png"
+      "type": "image/png",
+      "purpose": "maskable any"
     },
     {
-      "src": "./favicons/icon-384x384.png",
+      "src": "assets/favicons/icon-384x384.png",
       "sizes": "384x384",
-      "type": "image/png"
+      "type": "image/png",
+      "purpose": "maskable any"
     },
     {
-      "src": "./favicons/icon-512x512.png",
+      "src": "assets/favicons/icon-512x512.png",
       "sizes": "512x512",
-      "type": "image/png"
+      "type": "image/png",
+      "purpose": "maskable any"
     }
-  ],
-  "start_url": ".",
-  "theme_color": "#3986FD",
-  "background_color": "#ffffff",
-  "display": "standalone"
+  ]
 }
