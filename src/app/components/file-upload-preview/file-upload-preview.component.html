@@ -1,7 +1,4 @@
 <div class="file-preview">
-  <img
-    class="file-preview__image"
-    [src]="imagePreviewURI | async"
-    alt="Image Preview"
-  />
+  <img class="file-preview__image" [src]="imagePreviewURI | async" alt="Image Preview" />
+  <p class="file-preview__size"><strong>Size</strong>: {{file?.size | filesize}}</p>
 </div>
