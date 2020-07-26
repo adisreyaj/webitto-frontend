@@ -32,6 +32,10 @@ const routes: Routes = [
         path: 'favicon-generator',
         loadChildren: () => import('./favicon/favicon.module').then((m) => m.FaviconModule),
       },
+      {
+        path: 'webp',
+        loadChildren: () => import('./webp-converter/webp-converter.module').then((m) => m.WebpConverterModule),
+      },
     ],
   },
 ];

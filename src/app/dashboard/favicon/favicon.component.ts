@@ -43,7 +43,7 @@ export class FaviconComponent implements OnInit {
   ngOnInit(): void {}
 
   fileSelected(file: File) {
-    const isFileValid = FileValidationHelper.validatePWAIconFile(file).success;
+    const isFileValid = FileValidationHelper.validateFileProps(file).success;
     if (isFileValid) {
       this.file = file;
       this.fileName = file.name;

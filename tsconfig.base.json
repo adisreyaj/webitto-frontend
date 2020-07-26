@@ -17,7 +17,8 @@
       "@config/*": ["./src/app/core/config/*"],
       "@services/*": ["./src/app/core/services/*"],
       "@helpers/*": ["./src/app/core/helpers/*"],
-      "@directives/*": ["./src/app/core/directives/*"]
+      "@directives/*": ["./src/app/core/directives/*"],
+      "@pipes/*": ["./src/app/core/pipes/*"]
     }
   },
   "angularCompilerOptions": {
