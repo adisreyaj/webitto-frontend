@@ -5,13 +5,13 @@
     <app-file-upload-preview [file]="file" *ngIf="file && !isUploading"></app-file-upload-preview>
     <app-file-upload-progress *ngIf="isUploading" [progress]="progress" [fileName]="fileName">
     </app-file-upload-progress>
-
+    <p *ngIf="isConverted">🎉 Savings: {{savings}}</p>
     <div class="file-upload__actions" fxLayoutAlign="start center" fxLayoutGap="24px">
       <button webitto-stroked-button color="warn" (click)="reset()">
         Go Home
       </button>
-      <button *ngIf="!isFileUploaded" webitto-button color="primary" [disabled]="!file" (click)="generateAssets()">
-        Generate Assets
+      <button webitto-button color="primary" [disabled]="!file" (click)="isConverted ? download() : convert()">
+        {{isConverted ? 'Download Image' : 'Generate Assets'}}
       </button>
     </div>
   </section>

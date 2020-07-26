@@ -11,11 +11,12 @@
 
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { FileSizeModule } from '../../core/pipes/file-size.module';
 import { FileUploadPreviewComponent } from './file-upload-preview.component';
 
 @NgModule({
   declarations: [FileUploadPreviewComponent],
-  imports: [CommonModule],
+  imports: [CommonModule, FileSizeModule],
   exports: [FileUploadPreviewComponent],
 })
 export class FileUploadPreviewModule {}

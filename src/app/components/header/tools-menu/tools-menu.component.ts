@@ -34,7 +34,7 @@ export class ToolsMenuComponent implements OnInit {
       icon: '../../../../assets/icons/meta.svg',
     },
     {
-      link: 'webp-converter',
+      link: 'webp',
       title: 'WebP Image Converter',
       icon: '../../../../assets/icons/convert.svg',
     },

@@ -37,9 +37,9 @@ export class PwaComponent implements OnInit {
   isAdvancedSettingsApplied = false;
   sectionHeader = {
     title: 'PWA Assets Generator',
-    subtitle: `Your PWA needs to have icons so that it can be shown as App icons, or title bar icons etc. 
+    subtitle: `Your PWA needs to have icons so that it can be shown as App icons, or title bar icons etc.
     There are different resolutions that needs to be present for it to work perfectly in all browsers.
-    Just choose a good resolution image of your logo and upload it. 
+    Just choose a good resolution image of your logo and upload it.
     `,
   };
   constructor(private fileUploadService: FileUploadService, private snackbar: MatSnackBar, private router: Router) {}
@@ -47,7 +47,7 @@ export class PwaComponent implements OnInit {
   ngOnInit(): void {}
 
   fileSelected(file: File) {
-    const isFileValid = FileValidationHelper.validatePWAIconFile(file).success;
+    const isFileValid = FileValidationHelper.validateFileProps(file).success;
     if (isFileValid) {
       this.file = file;
       this.fileName = file.name;

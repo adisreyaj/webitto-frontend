@@ -9,14 +9,9 @@
  * -----
  */
 
-import {
-  Component,
-  OnInit,
-  Input,
-  ChangeDetectionStrategy,
-} from '@angular/core';
+import { Component, OnInit, Input, ChangeDetectionStrategy } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
-import { BehaviorSubject } from 'rxjs';
+import { ReplaySubject } from 'rxjs';
 
 @Component({
   selector: 'app-file-upload-preview',
@@ -25,25 +20,29 @@ import { BehaviorSubject } from 'rxjs';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class FileUploadPreviewComponent implements OnInit {
+  private currentFile: File | Blob;
   @Input('file')
-  set file(file: File) {
+  set file(file: File | Blob) {
+    this.currentFile = file;
     this.readFile(file);
   }
 
-  private imagePreviewSubject = new BehaviorSubject(null);
+  get file() {
+    return this.currentFile;
+  }
+
+  private imagePreviewSubject = new ReplaySubject(1);
   imagePreviewURI = this.imagePreviewSubject.asObservable();
   constructor(private sanitizerService: DomSanitizer) {}
 
   ngOnInit(): void {}
 
-  readFile(file: File) {
+  readFile(file: File | Blob) {
     const fileReader = new FileReader();
     fileReader.readAsDataURL(file);
 
     fileReader.onload = () => {
-      const sanitizedURL = this.sanitizerService.bypassSecurityTrustUrl(
-        fileReader.result as string,
-      );
+      const sanitizedURL = this.sanitizerService.bypassSecurityTrustUrl(fileReader.result as string);
       this.imagePreviewSubject.next(sanitizedURL);
     };
   }
